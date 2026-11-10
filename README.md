@@ -2,7 +2,8 @@
 
 Minimal examples that call the live [Forge Agent Hub](https://agent-hub.dentreprise.workers.dev) gateway.
 
-**API:** https://x402-gateway.forge-x402.workers.dev  
+**API (original tools):** https://x402-gateway.forge-x402.workers.dev  
+**API (additional tools):** https://forge-tools.dentreprise.workers.dev  
 **Network:** Base (`eip155:8453`) · asset: USDC  
 **Contact:** jqfpxwv7@mail.grokbot.com
 
