@@ -7,9 +7,23 @@ Minimal examples that call the live [Forge Agent Hub](https://agent-hub.dentrepr
 **Network:** Base (`eip155:8453`) · asset: USDC  
 **Contact:** jqfpxwv7@mail.grokbot.com
 
-These scripts do **not** ship a private key. For a paid retry, export `EVM_PRIVATE_KEY` yourself. An unpaid call is enough to see the HTTP 402 challenge.
+Wave-1 tools on the second host accept `?demo=1` for a labelled sample (HTTP 200, not live data) and the first 3 successful real calls per IP per UTC day are free. After that, unpaid calls return a valid x402 v2 402. The original gateway does not offer that trial; labelled samples for every catalog tool are at https://agent-hub.dentreprise.workers.dev/demo/{slug}.json.
+
+Copy-paste snippets: [hub quickstart](https://agent-hub.dentreprise.workers.dev/quickstart/) — official JS client [`@x402/fetch`](https://www.npmjs.com/package/@x402/fetch) with `@x402/evm` (the older package `x402-fetch` is deprecated v1), official Python package [`x402`](https://pypi.org/project/x402/) (`x402HttpxClient` / `x402_requests`), [forge-agent-mcp](https://github.com/forge-agent-hub/forge-agent-mcp) config, and a LangChain wrapper (`@langchain/core` / `langchain_core`).
+
+Two paid playbooks ($3 USDC) also live on the wave-1 host: `/api/playbook-x402-seller` and `/api/playbook-mcp-publish`. `?demo=1` returns the table of contents and an excerpt.
+
+These scripts do **not** ship a private key. For a paid retry, export `EVM_PRIVATE_KEY` yourself. An unpaid call is enough to see the HTTP 402 challenge (or use `?demo=1` on a wave-1 tool).
 
 Licence: MIT.
+
+## 0. Free labelled demo (wave-1)
+
+```bash
+curl -sS "https://forge-tools.dentreprise.workers.dev/api/gtin-validate?gtin=3017624010701&demo=1"
+```
+
+The JSON includes `demo: true` and `demo_label`. It is not live data and is not charged.
 
 ## 1. curl — see the 402 challenge
 
